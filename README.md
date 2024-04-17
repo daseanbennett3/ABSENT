@@ -1,4 +1,4 @@
-# TITLE: Absenteeism: An Analytical Look of Absences from an HR Perspective
+# TITLE: Absenteeism: An Analytical Look at Absences from an HR Perspective
 # DESCRIPTION:
 A company has decided to create a monetary incentive for their employees to stay healthy. A specific indicator of health used by this company is whether an employee partakes in smoking.
 The company has allocated a bonus of $983,221 that is to be split between the healthiest of employees in the form of an hourly increase. The answer to this problem is explained in the CODE_EXPLAINED.sql
