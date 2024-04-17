@@ -3,5 +3,8 @@
 A company has decided to create an monetary incentive for their employees to stay healthy. A specific indicator of health used by this comapny is whether or not an employee partakes in smoking.
 The company has allocated a bonus of $983,221 that is to be split between the healthiest of employees in the form of an hourly increase. The answer to this problem is explained in the CODE_EXPLAINED.sql
 file under the "Compensation Rate Increase for Non-Smokers" section (lines 17-24). 
+
 The Human Resources department of this company may want to consider a few other factors related to health for future refernce when consindering giving another incentive. I made this decision easier for them 
-in the form of charts and graphs though the use of Power BI. In my Power BI file (POWER BI Visualization.pbix) there are several KPI's that may be considered for the new incentive. 
+in the form of charts and graphs though the use of Power BI. In my Power BI file (POWER BI Visualization.pbix) there are several KPI's that may be considered for the new incentive. You will find a card with
+the average amount of hours an employee spent absent, the total amount of hours all employees spent absent, and a count of how many employees there are. Next you will see three pie charts. The first two charts
+will let the viewer see the amout of employees who smoke/drink compared to those who do not. The last charts show the hours an employee sepnt absent based on their education level. 
