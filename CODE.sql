@@ -1,3 +1,19 @@
+--Join The Tables
+SELECT * FROM Absenteeism_at_work a
+LEFT JOIN Compensation c ON c.id = a.id /*The resulting table will now include the column "comp_hr"**/
+LEFT JOIN Reasons r ON r.Number = a.Reason_for_absence;
+
+--Find the "healthiest" of the employees who would recieve part of the bonus  
+SELECT * FROM Absenteeism_at_work
+WHERE Social_drinker = 0 AND Social_smoker = 0
+AND Body_mass_index IS BETWEEN 18.5 AND 25
+AND Absenteeism_time_in_hours < (SELECT AVG(Absenteeism_time_in_hours) FROM Absenteeism_at_work);
+
+--Compensation Rate Increase for Non-Smokers
+SELECT COUNT(*) AS "Non-Smokers" FROM Absenteeism_at_work
+WHERE Social_smoker = 0;
+
+--Optimize The Query
 SELECT
 a.ID, r.Reason, a.Month_of_absence, a.Day_of_the_week, a.Seasons, a.Transportation_Expense, a.Age, a.Work_load_Average_Day, a.Education, a.Son,
 a.Social_Drinker, a.Social_Smoker, a.Absenteeism_Time_In_Hours AS 'Hours Absent',
