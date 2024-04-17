@@ -1,16 +1,17 @@
--- create a join table (Absenteeism_at_work is the MAIN table)
+-- JOIN (add) the Reasons table to the Absenteeism_at_work table (the main table) so we can add the reason (reasons.reasons) to it. 
 SELECT * FROM Absenteeism_at_work a
---LEFT JOIN becuase you want ALL columns from the the tablee on the left which is the Absenteeism_at_work table)
+--LEFT JOIN becuase you want ALL columns from the the table on the left (the Absenteeism_at_work table is on the left)
 LEFT JOIN Compensation c ON c.id = a.id /*The resulting table will now include the column "comp_hr"**/
---LEFT JOIN the Reasons table to add the reasoning for the absence depending on the number in the Reason_for_absense column in the first table
+--LEFT JOIN the Reasons table to add the reasoning for the absence depending on the number in the Reason_for_absense column in the Absenteeism_at_work table
 LEFT JOIN Reasons r ON r.Number = a.Reason_for_absence;
 
---Find The "Healthiest"
+--Find the "healthiest" of the employees who would recieve part of the bonus  
 SELECT * FROM Absenteeism_at_work
 --They do not drink nor do they smoke
 WHERE Social_drinker = 0 AND Social_smoker = 0
-AND Body_mass_index < 25
---Their absenteeism in hours is LESS THAN the avaerage absenteeism in hours
+--Their BMI is considered "Healthy"
+AND Body_mass_index IS BETWEEN 18.5 AND 25
+--Their absenteeism (in hours) is LESS THAN the avaerage absenteeism of everybody (in hours)
 AND Absenteeism_time_in_hours < (SELECT AVG(Absenteeism_time_in_hours) FROM Absenteeism_at_work);
 
 --Compensation Rate Increase for Non-Smokers ($983,221 bonus for the budget to distribute each hour for every non-smoker)
